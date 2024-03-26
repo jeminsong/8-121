@@ -1,8 +1,12 @@
-// Please fill in below.
 // Jemin Song
-// <Your section number> (e.g. CPSC 121L-01)
-// <Date>
-// <Your csu.fullerton.edu email>
+// CPSC 121L-02
+// 3/26/2024
+// jeminsong0119@csu.fullerton.edu
+// @jeminsong
+//
+// Lab 8-1
+// If it is a pair programming lab please specify partner below.
+// Partner: @peteranteater
 
 #include "car.h"
 
