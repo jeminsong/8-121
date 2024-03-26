@@ -1,21 +1,21 @@
-// Please fill in below.
-// <Your name>
-// <Your section number> (e.g. CPSC 121L-01)
-// <Date>
-// <Your csu.fullerton.edu email>
-// <Your GitHub username>
+// Jemin Song
+// CPSC 121L-02
+// 3/26/2024
+// jeminsong0119@csu.fullerton.edu
+// @jeminsong
 //
 // Lab 8-2
 // If it is a pair programming lab please specify partner below.
 // Partner: @peteranteater
 
 #include <iostream>
+#include <vector>
+
+#include "pet.h"
 
 int main() {
-  // =================== YOUR CODE HERE ===================
-  // 1. Create a vector Pet objects called `pets`.
-  //    Don't forget to #include <vector> and "pet.h"
-  // ======================================================
+  std::vector<Pet> pets;
+
   std::string name;
   std::string breed_name;
   std::string species;
@@ -36,17 +36,16 @@ int main() {
       std::cin >> weight;
       std::cin.ignore();
 
-      // =================== YOUR CODE HERE ===================
-      // 2. Create a Pet object using the input from the user
-      //    Store the newly-created Pet object into the vector.
-      // ======================================================
+      Pet new_pet(name, species, breed_name, color, weight);
+
+      pets.push_back(new_pet);
     }
   } while (name != "q");
 
   std::cout << "Printing Pets:\n";
-  // =================== YOUR CODE HERE ===================
-  // 3.  Print information about each pet in the `pets`
-  //     vector by writing a loop to access each Pet object.
-  // ======================================================
+  for (const auto& pet : pets) {
+    pet.Print();
+    std::cout << std::endl;
+  }
   return 0;
 }

@@ -1,23 +1,45 @@
-// Please fill in below.
-// <Your name>
-// <Your section number> (e.g. CPSC 121L-01)
-// <Date>
-// <Your csu.fullerton.edu email>
-// <Your GitHub username>
+// Jemin Song
+// CPSC 121L-02
+// 3/26/2024
+// jeminsong0119@csu.fullerton.edu
+// @jeminsong
 //
 // Lab 8-2
 // If it is a pair programming lab please specify partner below.
 // Partner: @peteranteater
 
+#ifndef PET_H
+#define PET_H
+
 #include <string>
 
 #include "breed.h"
-// ======================= YOUR CODE HERE =======================
-// Write the Pet class here. Refer to the README for the member
-// variables, constructors, and member functions needed.
-//
-// Note: mark functions that do not modify the member variables
-// as const, by writing `const` after the parameter list.
-// Pass objects by const reference when appropriate.
-// Remember that std::string is an object!
-// ===============================================================
+
+class Pet {
+ private:
+  std::string name_;
+  Breed breed_;
+  double weight_;
+
+ public:
+  Pet();
+
+  Pet(const std::string& name, const Breed& breed, double weight);
+
+  Pet(const std::string& name, const std::string& species,
+      const std::string& breed_name, const std::string& color, double weight);
+
+  std::string GetName() const;
+  Breed GetBreed() const;
+  double GetWeight() const;
+
+  void SetName(const std::string& name);
+  void SetBreed(const Breed& breed);
+  void SetBreed(const std::string& species, const std::string& breed_name,
+                const std::string& color);
+  void SetWeight(double weight);
+
+  void Print() const;
+};
+
+#endif
